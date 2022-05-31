@@ -10,6 +10,11 @@ RUN cloud_sql_proxy
 ./cloud_sql_proxy -instances={{INSTANCE_CONNECTION_NAME}}=tcp:{{PORT}}
 
 
+run cloud task emulator
+=========================
+go run .\ -queue projects/sample-project/locations/local/queues/default-queue
+
+
 COMMAND TO DEPLOY TO APP ENGINE
 =====================================
 gcloud app deploy app.yaml -q
